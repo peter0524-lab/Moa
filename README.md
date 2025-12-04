@@ -21,13 +21,13 @@ https://share.streamlit.io/ 에 접속하고 GitHub 계정으로 로그인
 - **Main file path**: `app.py` 입력
 - **App URL**: 원하는 URL 입력 (예: `moa-village`)
 
-### 3. 환경 변수 설정
+### 3. 환경 변수 설정 (중요!)
 - "Advanced settings" 클릭
-- "Secrets" 섹션에 다음 추가:
+- "Secrets" 섹션에 다음을 **TOML 형식**으로 추가:
+  ```toml
+  OPENAI_API_KEY = "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"
   ```
-  OPENAI_API_KEY=sk-proj-...
-  ```
-  (실제 API 키 값 입력)
+  ⚠️ **주의**: Streamlit Cloud는 Secrets를 환경 변수로 자동 변환합니다. 코드에서는 `os.getenv("OPENAI_API_KEY")`로 읽을 수 있습니다.
 
 ### 4. 배포 시작
 - "Deploy!" 버튼 클릭

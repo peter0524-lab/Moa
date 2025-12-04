@@ -36,9 +36,9 @@ def ingest_docs():
 
 if __name__ == "__main__":
     if not os.getenv("OPENAI_API_KEY"):
-        # 환경 변수가 없으면 기본 API 키 사용
-        default_key = "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"
-        os.environ["OPENAI_API_KEY"] = default_key
-        print("⚠️ 환경 변수가 없어 기본 API 키를 사용합니다.")
-    ingest_docs()
+        print("오류: OPENAI_API_KEY 환경 변수가 설정되지 않았습니다.")
+        print("로컬 실행: .env 파일에 OPENAI_API_KEY를 설정하세요.")
+        print("Streamlit Cloud: Settings > Secrets에 OPENAI_API_KEY를 추가하세요.")
+    else:
+        ingest_docs()
 
